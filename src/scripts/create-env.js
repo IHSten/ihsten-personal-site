@@ -9,4 +9,4 @@ export const environment = {
 };
 `)
 
-console.log(`prod env file sucessfully created with ${process.env.FIREBASE_PROFILE_PICTURE_KEY}`)
+console.log(`prod env file sucessfully`)
