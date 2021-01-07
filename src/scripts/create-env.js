@@ -4,9 +4,8 @@ const fs = require('fs')
 // This is hacky af, but again for a personal site deployed on netlify I'm not as bothered
 fs.writeFileSync('./src/environments/environment.prod.ts',`\
 export const environment = {
-    production: true,
-    FIREBASE_PROFILE_PICTURE_KEY: "${process.env.FIREBASE_PROFILE_PICTURE_KEY}"
+    production: true
 };
 `)
 
-console.log(`prod env file sucessfully`)
+console.log(`prod env file generated sucessfully`)

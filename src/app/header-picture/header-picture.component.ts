@@ -8,11 +8,10 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class HeaderPictureComponent implements OnInit {
   // This can and should be updated to be way more flexible, but for a personal site I don't really care
-  imageLocation = "https://firebasestorage.googleapis.com/v0/b/ihsten-personal-site-backend.appspot.com/o/profile.jpg?alt=media&token="
+  imageLocation = "/assets/profile.jpg"
   constructor() { }
 
   ngOnInit(): void {
-    this.imageLocation += environment.FIREBASE_PROFILE_PICTURE_KEY
   }
 
 }
