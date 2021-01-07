@@ -1,6 +1,5 @@
 div.site-box{
     display: grid;
-    grid-template-columns: 32.5% minmax(0, 35%) 32.5%;
     height:95%
 }
 
@@ -11,6 +10,22 @@ div.site-box{
     min-width: 100px;
     max-width: 100%;
 }
+
+@media all and (max-width: 2160px) and (min-width: 720px) {
+    div.site-box{
+        grid-template-columns: minmax(0, 32.5%) minmax(0%, 35%) minmax(0, 32.5%);
+    }
+
+  }
+
+  @media all and (max-width: 720px) and (min-width: 0px) {
+    div.site-box{
+        grid-template-columns: minmax(0, 5%) minmax(0%, 90%) minmax(0, 5%);
+    }
+    p{
+        font-size: 3vw;
+    }
+  }
 
 @keyframes slideInFromLeft {
     0% {
@@ -45,6 +60,7 @@ div.site-box{
     transition: 1s;
     right: 0;
 }
+
 a{
     text-decoration: none;
 }
