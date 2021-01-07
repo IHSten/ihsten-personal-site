@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "personal-site": {
+    "ihsten-personal-site": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/personal-site",
+            "outputPath": "dist/ihsten-personal-site",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "personal-site:build"
+            "browserTarget": "ihsten-personal-site:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "personal-site:build:production"
+              "browserTarget": "ihsten-personal-site:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "personal-site:build"
+            "browserTarget": "ihsten-personal-site:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "personal-site:serve"
+            "devServerTarget": "ihsten-personal-site:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "personal-site:serve:production"
+              "devServerTarget": "ihsten-personal-site:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "personal-site"
+  "defaultProject": "ihsten-personal-site"
 }

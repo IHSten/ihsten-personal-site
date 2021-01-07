@@ -1,6 +1,6 @@
 {
-  "name": "personal-site",
-  "version": "0.0.0",
+  "name": "ihsten-personal-site",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

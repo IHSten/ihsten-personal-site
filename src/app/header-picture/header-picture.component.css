@@ -1,0 +1,18 @@
+div.round-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 1000px;
+    max-width: 1000px;
+}
+
+img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: 80%;
+    border-radius: 50%;
+    overflow: hidden;
+}
