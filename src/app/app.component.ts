@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ihsten-personal-site';
+  title = 'Home | Ian Steneker';
   year = 1984
+  
+  public constructor(private titleService: Title) {
+
+  }
+  
   ngOnInit(){
-    this.getCurrentYear()
+    this.setCurrentYear()
+    this.titleService.setTitle(this.title)
   }
 
-  getCurrentYear(){
+  setCurrentYear(){
     this.year = new Date().getFullYear()
   }
 }
