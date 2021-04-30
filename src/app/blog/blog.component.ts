@@ -15,7 +15,7 @@ import { articleInfo } from '../interfaces/articleInfo'
 
 export class BlogComponent implements OnInit {
 
-  id = this.route.snapshot.paramMap.get('id')
+  id: string = "";
   numberOfArticles: number = 0;
   articleLoaded: boolean = false;
   displayedArticle: Entry<any>[] = [];
@@ -27,23 +27,30 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle("Blog | Ian Steneker")
-    if(this.id?.match(/([a-z]|[A-Z]|\d){21}/g) == null) {
-      this.redirectToLatestArticle();
-    } else {
-      this.contentfulService.getArticle(this.id)
-      .then((result) => {
-        this.updateArticle(result)
-        this.articleLoaded = true
-      })
-      .catch((error) => {
-        // If the user gave a format-correct URL but there's no article on that ID, redirect to a different page
-        // TODO: add a 404 page
-        this.router.navigate(['**'])
-      })
-      this.contentfulService.getArticlesByYear().then((resultMap) => {
-        this.sidebarList = resultMap;
-      })
-    }
+    
+    this.route.params.subscribe(
+      params => {
+        this.id = params['id']
+        if(this.id?.match(/([a-z]|[A-Z]|\d){21}/g) == null) {
+          this.redirectToLatestArticle();
+        } else {
+          this.contentfulService.getArticle(this.id)
+          .then((result) => {
+            this.updateArticle(result)
+            this.articleLoaded = true
+          })
+          .catch((error) => {
+            // If the user gave a format-correct URL but there's no article on that ID, redirect to a different page
+            // TODO: add a 404 page
+            this.router.navigate(['**'])
+          })
+          this.contentfulService.getArticlesByYear().then((resultMap) => {
+            this.sidebarList = resultMap;
+          })
+        }
+      }
+    )
+
   }
 
   private redirectToLatestArticle(){

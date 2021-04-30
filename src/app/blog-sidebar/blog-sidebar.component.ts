@@ -8,7 +8,6 @@ import { articleInfo } from '../interfaces/articleInfo'
 })
 export class BlogSidebarComponent implements OnInit {
   @Input() listByYear: Map<number, articleInfo[]> = new Map();
-  baseURL: string = location.origin
   constructor() { }
 
   ngOnInit(): void {
