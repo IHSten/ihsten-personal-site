@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient, Entry } from 'contentful';
 import { environment } from 'src/environments/environment.prod';
+import { articleInfo } from '../interfaces/articleInfo'
 
 @Injectable({
   providedIn: 'root'
@@ -63,7 +64,7 @@ export class ContentfulService {
 
   // Request to retrieve all of the articles published dates and titles
   // These are then formatted into a map
-  getArticlesByYear(query?: object): Promise<Map<number, string[]>> {
+  getArticlesByYear(query?: object): Promise<Map<number, articleInfo[]>> {
     return this.client.getEntries(Object.assign({
       content_type: 'article',
       select: 'sys.id,fields.title,fields.publishedDate',

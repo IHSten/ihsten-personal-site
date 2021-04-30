@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../services/contentful.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Entry } from 'contentful';
+import { articleInfo } from '../interfaces/articleInfo'
 
 @Component({
   selector: 'app-blog',
@@ -15,7 +16,7 @@ export class BlogComponent implements OnInit {
   numberOfArticles: number = 0;
   articleLoaded: boolean = false;
   displayedArticle: Entry<any>[] = [];
-  sidebarList: Map<number, string[]> = new Map();
+  sidebarList: Map<number, articleInfo[]> = new Map();
   
 
   constructor(private contentfulService: ContentfulService, private router: Router, private route: ActivatedRoute) { 
