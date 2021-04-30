@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <div class="sidebar-content">
+        <h2>Past Articles</h2>
+        <ul class="yearList">
+            <!-- TODO: Make this a dropdown -->
+            <li *ngFor="let year of listByYear.keys()">
+                {{year}}
+                <ul class="articleList">
+                    <li *ngFor="let article of listByYear.get(year)">
+                        <a href="{{baseURL}}/blog/{{article.id}}">{{article.title}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

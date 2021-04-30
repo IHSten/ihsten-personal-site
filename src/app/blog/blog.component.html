@@ -1,0 +1,28 @@
+<div class="site-box">
+    <div></div>
+    <div class = "content">
+        <div class="header">
+            <h1>Project Blog</h1>
+            <p>A place for me to post about coding projects or any of my other hobbies.</p>
+        </div>
+        <hr class="divider">
+        <div class="article">
+            <div *ngIf="articleLoaded; else articleElseBlock">
+                <!-- Render markdown currentlyDisplayedArticle from server-->
+                <app-article-render [displayArticle] = "displayedArticle[0]"></app-article-render>
+            </div>
+            <ng-template #articleElseBlock>
+                <div class="loading-article">
+                    <div><img src="/assets/loading.png" class="loading-icon"></div>
+                    <div><h3>Loading article...</h3></div>
+                    <div><p>(If you've been here a while, you probably have a bad URL, or something went wrong)</p></div>
+                </div>
+            </ng-template>
+        </div>
+        
+        <div class="further-content">
+        </div>
+    </div>
+        <!-- sidebar -->
+        <app-blog-sidebar [listByYear] = "sidebarList"></app-blog-sidebar>
+</div>
