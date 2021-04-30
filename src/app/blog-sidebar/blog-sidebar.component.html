@@ -7,6 +7,7 @@
                 {{year}}
                 <ul class="articleList">
                     <li *ngFor="let article of listByYear.get(year)">
+                        <!-- Could probably use a routerLink here but href forces a page reload to get the new article which is easier -->
                         <a href="{{baseURL}}/blog/{{article.id}}">{{article.title}}</a>
                     </li>
                 </ul>

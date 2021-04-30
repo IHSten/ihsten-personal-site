@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentfulService } from '../services/contentful.service';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Entry } from 'contentful';
+
+import { ContentfulService } from '../services/contentful.service';
+
 import { articleInfo } from '../interfaces/articleInfo'
 
 @Component({
@@ -17,12 +20,13 @@ export class BlogComponent implements OnInit {
   articleLoaded: boolean = false;
   displayedArticle: Entry<any>[] = [];
   sidebarList: Map<number, articleInfo[]> = new Map();
-  
 
-  constructor(private contentfulService: ContentfulService, private router: Router, private route: ActivatedRoute) { 
+  constructor(private contentfulService: ContentfulService, private router: Router,
+              private route: ActivatedRoute, private titleService: Title) { 
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Blog | Ian Steneker")
     if(this.id?.match(/([a-z]|[A-Z]|\d){21}/g) == null) {
       this.redirectToLatestArticle();
     } else {
@@ -34,7 +38,7 @@ export class BlogComponent implements OnInit {
       .catch((error) => {
         // If the user gave a format-correct URL but there's no article on that ID, redirect to a different page
         // TODO: add a 404 page
-        this.router.navigate(['/'])
+        this.router.navigate(['**'])
       })
       this.contentfulService.getArticlesByYear().then((resultMap) => {
         this.sidebarList = resultMap;
@@ -45,12 +49,8 @@ export class BlogComponent implements OnInit {
   private redirectToLatestArticle(){
     // Get the latest article and reroute to it
     this.contentfulService.getLatestArticle().then(entryArticle => {
-      if(entryArticle.sys.id == null || entryArticle.sys.id == "null") {
-        this.router.navigate(['/'])
-      } else {
-        this.router.navigate([`/blog/${entryArticle.sys.id}`])
-      }
-
+      this.router.navigateByUrl(`/`, {skipLocationChange: true}).then(()=>
+      this.router.navigate([`/blog/${entryArticle.sys.id}`]));
     })
   }
 

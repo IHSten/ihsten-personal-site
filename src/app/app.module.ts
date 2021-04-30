@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogSidebarComponent } from './blog-sidebar/blog-sidebar.component';
 import { ArticleRenderComponent } from './article-render/article-render.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ArticleRenderComponent } from './article-render/article-render.componen
     HomeComponent,
     FooterComponent,
     BlogSidebarComponent,
-    ArticleRenderComponent
+    ArticleRenderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
