@@ -6,7 +6,11 @@ require('dotenv').config()
 // This is hacky af, but again for a personal site deployed on netlify I'm not as bothered
 fs.writeFileSync('./src/environments/environment.ts',`\
 export const environment = {
-    production: false
+    production: false,
+    contentful: {
+        spaceID: ${process.env.CONTENTFUL_SPACE_ID},
+        token: ${process.env.CONTENTFUL_ACCESS_TOKEN}
+    }
 };
 `)
 

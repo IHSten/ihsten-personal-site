@@ -1,5 +1,8 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +10,10 @@ import { HeaderPictureComponent } from './header-picture/header-picture.componen
 import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { BlogSidebarComponent } from './blog-sidebar/blog-sidebar.component';
+import { ArticleRenderComponent } from './article-render/article-render.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +21,16 @@ import { FooterComponent } from './footer/footer.component';
     HeaderPictureComponent,
     BlogComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    BlogSidebarComponent,
+    ArticleRenderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MarkdownModule.forRoot()
   ],
   providers: [
     Title
