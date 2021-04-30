@@ -9,8 +9,8 @@ fs.writeFileSync('./src/environments/environment.prod.ts',`\
 export const environment = {
     production: true,
     contentful: {
-        spaceID: ${process.env.CONTENTFUL_SPACE_ID},
-        token: ${process.env.CONTENTFUL_ACCESS_TOKEN}
+        spaceID: "${process.env.CONTENTFUL_SPACE_ID}",
+        token: "${process.env.CONTENTFUL_ACCESS_TOKEN}"
     }
 };
 `)

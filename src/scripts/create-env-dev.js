@@ -8,8 +8,8 @@ fs.writeFileSync('./src/environments/environment.ts',`\
 export const environment = {
     production: false,
     contentful: {
-        spaceID: ${process.env.CONTENTFUL_SPACE_ID},
-        token: ${process.env.CONTENTFUL_ACCESS_TOKEN}
+        spaceID: "${process.env.CONTENTFUL_SPACE_ID}",
+        token: "${process.env.CONTENTFUL_ACCESS_TOKEN}"
     }
 };
 `)
