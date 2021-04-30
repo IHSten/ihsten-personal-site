@@ -1,3 +1,5 @@
-<h2>{{displayArticle.fields.title}}</h2>
-<h3>By {{displayArticle.fields.author}}</h3>
+<h2 class="title">{{displayArticle.fields.title}}</h2>
+<h3 class ="author">By {{displayArticle.fields.author}}</h3>
+<p class = "publishedDate">Published on {{formattedDate}}</p>
+<hr class="divider"/>
 <div id="article-content" [innerHTML] = "renderContent()"></div>

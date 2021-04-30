@@ -1,9 +1,27 @@
 div.footer{
     height: 30px;
     font-size: 12px;
+    margin-top: 25px;
 }
 
 p.footer{
-    margin-left: 50px;
+    margin-left: 25px;
     margin-top: 10px;
+}
+
+div.sitemap {
+    margin: auto;
+    text-align: center;
+}
+
+ul.sitemap {
+    margin: auto;
+    /* list-style: none; */
+}
+
+ul.sitemap li {
+    margin-left: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
 }

@@ -4,7 +4,14 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-footer',
   template: `
   <div class="footer">
-  <p class="footer">Made by Ian Steneker, © {{year}}</p>
+    <div class="sitemap">
+    <ul class ="sitemap">
+      <li><a routerLink='/'>Home</a>
+      <li><a routerLink='/blog'>Blog</a>
+    </ul>
+    </div>
+
+    <p class="footer">Made by Ian Steneker, © {{year}}</p>
   </div>
   `,
   styleUrls: ['./footer.component.css']
