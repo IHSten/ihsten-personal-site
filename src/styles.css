@@ -2,3 +2,75 @@
 body {
     font-family: 'Courier New', Courier, monospace;
 }
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+
+div.site-box{
+    display: grid;
+    height:95%
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 100px;
+    max-width: 100%;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #dfe6e9;
+}
+  
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #2a2a2a;
+}
+
+.dark-mode a:link {
+    text-decoration: none;
+    color:rgb(0, 190, 190);
+}
+
+.dark-mode a:visited {
+    text-decoration: none;
+    color:rgb(190, 0, 174);
+}
+
+.light-mode button{
+    color: #2a2a2a;
+}
+
+.dark-mode button {
+    color:rgb(0, 190, 190);
+}

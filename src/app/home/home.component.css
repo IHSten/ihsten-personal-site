@@ -1,17 +1,6 @@
-div.site-box{
-    display: grid;
-    height:95%
-}
 
-.content{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    min-width: 100px;
-    max-width: 100%;
-}
 
-@media all and (max-width: 2160px) and (min-width: 720px) {
+@media all and (max-width: 5120px) and (min-width: 720px) {
     div.site-box{
         grid-template-columns: minmax(0, 32.5%) minmax(0%, 35%) minmax(0, 32.5%);
     }
@@ -27,28 +16,6 @@ div.site-box{
     }
   }
 
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-200%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromRight {
-    0% {
-        transform: translateX(200%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 .header-picture {
     animation: 0.75s cubic-bezier(0, 0.75, 0.9, 1) 0s 1 slideInFromLeft;
 }
@@ -59,8 +26,4 @@ div.site-box{
     max-width:100%;
     transition: 1s;
     right: 0;
-}
-
-a{
-    text-decoration: none;
 }

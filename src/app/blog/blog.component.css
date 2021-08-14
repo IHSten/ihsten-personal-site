@@ -1,17 +1,5 @@
-div.site-box{
-    display: grid;
-    height:95%
-}
 
-.content{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    min-width: 100px;
-    max-width: 100%;
-}
-
-@media all and (max-width: 2160px) and (min-width: 720px) {
+@media all and (max-width: 5120px) and (min-width: 720px) {
     div.site-box{
         grid-template-columns: minmax(0, 22.5%) minmax(0%, 60%) minmax(0, 17.5%) minmax(0, 5%);
     }
@@ -20,34 +8,12 @@ div.site-box{
 
   @media all and (max-width: 720px) and (min-width: 0px) {
     div.site-box{
-        grid-template-columns: minmax(0, 5%) minmax(0%, 90%) minmax(0, 5%);
+        grid-template-columns: minmax(0, 10%) minmax(0%, 80%) minmax(0, 10%);
     }
     p{
         font-size: 3vw;
     }
   }
-
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-200%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromRight {
-    0% {
-        transform: translateX(200%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
 @keyframes spin {
     from {transform:rotate(0deg);}
@@ -70,8 +36,4 @@ div.loading-article {
 hr.divider{
     border-top: 2px solid black;
     width: 100%
-}
-
-a{
-    text-decoration: none;
 }
