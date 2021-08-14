@@ -6,7 +6,9 @@ div.footer{
 
 p.footer{
     margin-left: 25px;
-    margin-top: 10px;
+    margin-bottom:5px;
+    white-space: nowrap;
+    margin-top: 0px;
 }
 
 div.sitemap {
@@ -15,7 +17,10 @@ div.sitemap {
 }
 
 ul.sitemap {
-    margin: auto;
+    margin-left:-10px;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-right:auto;
     /* list-style: none; */
 }
 
@@ -24,4 +29,31 @@ ul.sitemap li {
     text-align: center;
     display: inline-block;
     font-size: 16px;
+}
+
+div.footer-utility {
+    display: grid;
+    height:16px;
+}
+
+@media all and (max-width: 5120px) and (min-width: 720px) {
+    div.footer-utility{
+        grid-template-columns: minmax(0%, 50%) minmax(0, 50%);
+    }
+
+  }
+
+button.textbutton {
+    background:none;
+    border:none;
+    padding:0;
+    cursor: pointer;
+    margin: 0;
+    margin-right: 25px;
+}
+
+span.toggledarkmode {
+    text-align: right;
+    margin-bottom: 5px;
+    margin-top:0;
 }

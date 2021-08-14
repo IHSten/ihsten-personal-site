@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DarkModeService } from 'angular-dark-mode';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -11,17 +13,29 @@ import { Component, OnInit } from '@angular/core';
     </ul>
     </div>
 
-    <p class="footer">Made by Ian Steneker, © {{year}}</p>
+    <div class="footer-utility">
+      <p class="footer">Made by Ian Steneker, © {{year}}</p>
+      <span class="toggledarkmode">
+        <button class="textbutton" (click)="onToggle()">Toggle Dark Mode</button>
+      </span>
+
+    </div>
   </div>
   `,
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
   year = 1984
-  constructor() { }
+  darkMode$: Observable<boolean> = this.darkModeService.darkMode$;
+  
+  constructor(private darkModeService: DarkModeService) { }
 
   ngOnInit(): void {
     this.setCurrentYear()
+  }
+
+  onToggle(): void {
+    this.darkModeService.toggle();
   }
 
   setCurrentYear(){
