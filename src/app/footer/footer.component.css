@@ -5,7 +5,6 @@ div.footer{
 }
 
 p.footer{
-    margin-left: 25px;
     margin-bottom:5px;
     white-space: nowrap;
     margin-top: 0px;
@@ -34,9 +33,18 @@ ul.sitemap li {
 div.footer-utility {
     display: grid;
     height:16px;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
 
 @media all and (max-width: 5120px) and (min-width: 720px) {
+    div.footer-utility{
+        grid-template-columns: minmax(0%, 60%) minmax(0, 40%);
+    }
+
+  }
+
+  @media all and (max-width: 720px) and (min-width: 0px) {
     div.footer-utility{
         grid-template-columns: minmax(0%, 50%) minmax(0, 50%);
     }
@@ -49,7 +57,7 @@ button.textbutton {
     padding:0;
     cursor: pointer;
     margin: 0;
-    margin-right: 25px;
+    margin-right: 5px;
 }
 
 span.toggledarkmode {
