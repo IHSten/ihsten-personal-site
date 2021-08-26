@@ -17,6 +17,13 @@
 .articleList{
     list-style-type: none;
 }
+
+a{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 li {
     text-indent: -40px;
 }
